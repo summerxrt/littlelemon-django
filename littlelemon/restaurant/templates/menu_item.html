@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% if menu_item %}
+        <h1>{{ menu_item.name }}</h1>
+        <p>{{ menu_item.description }}</p>
+        <p>Price: ${{ menu_item.price }}</p>
+        {% if menu_item.photo %}
+            <img src="{{ menu_item.photo.url }}" alt="{{ menu_item.name }}" style="max-width: 300px; width: 100%; height: auto;">
+        {% endif %}
+    {% else %}
+        <p>No menu item selected.</p>
+    {% endif %}
+{% endblock %}
+
